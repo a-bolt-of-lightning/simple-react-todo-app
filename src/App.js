@@ -19,6 +19,14 @@ class App extends Component{
     }
   }
 
+  setRemoveActive = () => {
+    
+    console.log(this.state.items);
+      if(this.state.items.length === 0 ){
+        this.setState({removeActive: false});
+      }
+  }
+
   handleChange = (e) => {
     this.setState({item: {
       name: e.target.value,
@@ -38,12 +46,10 @@ class App extends Component{
         name: "",
         id: 0
       },
-      items: newItems
+      items: newItems,
+      removeActive:true
     });
 
-    if(!this.state.removeActive){
-      this.setState({removeActive: true});
-    }
   }
 
   removeItems = () => {
@@ -57,6 +63,13 @@ class App extends Component{
     });
   }
 
+  removeAnItem = (id) => {
+    const newItems = this.state.items.filter( (item) => item.id !== id );
+    this.setState({
+      items: newItems,
+    }, (response => this.setRemoveActive()));
+  }
+
   render(){
     return (
         <div className="container">
@@ -65,7 +78,7 @@ class App extends Component{
               <Card>
                 <Card.Body>
                   <Input item={this.state.item}  handleChange={this.handleChange} handleSubmit={this.handleSubmit}/>
-                  <TaskList items={this.state.items} />
+                  <TaskList items={this.state.items} removeAnItem={this.removeAnItem}/>
                   <div className={"btn btn-block " + (this.state.removeActive ? "btn-danger" : "btn-dark")} onClick={this.removeItems}>Remove All Tasks</div>
                 </Card.Body>
               </Card> 

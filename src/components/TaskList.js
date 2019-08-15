@@ -10,7 +10,7 @@ class TaskList extends Component {
       <div className="card">
 				<ListGroup >
 					<div >
-						{this.props.items.map( (item) => <Task key={item.id} name={item.name} /> )} 
+						{this.props.items.map( (item) => <Task key={item.id} name={item.name} removeItem={() => this.props.removeAnItem(item.id)} /> )} 
 					</div>
 				</ListGroup>
       </div>

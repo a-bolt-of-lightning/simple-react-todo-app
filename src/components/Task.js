@@ -8,7 +8,13 @@ class Task extends Component {
   render(){
     return(
       <div className="m-2">
-          <ListGroup.Item> {this.props.name} </ListGroup.Item>    
+          <ListGroup.Item className="justify-content-between d-flex flex-row"> 
+						{this.props.name} 
+						<div>
+							<span> <i className="fa fa-trash" onClick={this.props.removeItem} /> </span>
+							<span> <i className="fa fa-pencil" /> </span>
+						</div>
+					</ListGroup.Item>    
       </div>
     );
   }
