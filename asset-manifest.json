@@ -1,0 +1,18 @@
+{
+  "files": {
+    "main.css": "/simple-react-todo-app/static/css/main.34de6062.chunk.css",
+    "main.js": "/simple-react-todo-app/static/js/main.412ed6d3.chunk.js",
+    "main.js.map": "/simple-react-todo-app/static/js/main.412ed6d3.chunk.js.map",
+    "runtime~main.js": "/simple-react-todo-app/static/js/runtime~main.6ef1e91a.js",
+    "runtime~main.js.map": "/simple-react-todo-app/static/js/runtime~main.6ef1e91a.js.map",
+    "static/css/2.009a9e72.chunk.css": "/simple-react-todo-app/static/css/2.009a9e72.chunk.css",
+    "static/js/2.f4f993c1.chunk.js": "/simple-react-todo-app/static/js/2.f4f993c1.chunk.js",
+    "static/js/2.f4f993c1.chunk.js.map": "/simple-react-todo-app/static/js/2.f4f993c1.chunk.js.map",
+    "index.html": "/simple-react-todo-app/index.html",
+    "precache-manifest.89d357b42ee7f758d6b316914848a589.js": "/simple-react-todo-app/precache-manifest.89d357b42ee7f758d6b316914848a589.js",
+    "service-worker.js": "/simple-react-todo-app/service-worker.js",
+    "static/css/2.009a9e72.chunk.css.map": "/simple-react-todo-app/static/css/2.009a9e72.chunk.css.map",
+    "static/css/main.34de6062.chunk.css.map": "/simple-react-todo-app/static/css/main.34de6062.chunk.css.map",
+    "static/media/font-awesome.min.css": "/simple-react-todo-app/static/media/fontawesome-webfont.fee66e71.woff"
+  }
+}
