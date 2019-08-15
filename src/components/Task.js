@@ -8,7 +8,7 @@ class Task extends Component {
   render(){
     return(
       <div className="m-2">
-          <ListGroup.Item> {this.props.item} </ListGroup.Item>    
+          <ListGroup.Item> {this.props.name} </ListGroup.Item>    
       </div>
     );
   }

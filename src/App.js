@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import TaskList from './components/TaskList';
 import Input from './components/Input';
 import {Card, Col, Row} from 'react-bootstrap';
+import uuid from 'uuid';
 
 class App extends Component{
 
@@ -11,14 +12,18 @@ class App extends Component{
     this.state={
       removeActive: false,
       items:[],
-      item:""
+      item:{
+        id: 0,
+        name : ""
+      }
     }
   }
 
   handleChange = (e) => {
-    this.setState({
-      item:e.target.value
-    });
+    this.setState({item: {
+      name: e.target.value,
+      id: uuid(),
+    }});
   }
   
   handleSubmit = (e) => {
@@ -29,7 +34,10 @@ class App extends Component{
     }
     const newItems = [...this.state.items, this.state.item];
     this.setState({
-      item:"",
+      item:{
+        name: "",
+        id: 0
+      },
       items: newItems
     });
 
@@ -40,7 +48,10 @@ class App extends Component{
 
   removeItems = () => {
     this.setState({
-      item: "",
+      item: {
+        name: "",
+        id: 0
+      },
       items: [],
       removeActive: false
     });
@@ -54,7 +65,7 @@ class App extends Component{
               <Card>
                 <Card.Body>
                   <Input item={this.state.item}  handleChange={this.handleChange} handleSubmit={this.handleSubmit}/>
-                  <TaskList items={this.state.items} removeItems={this.removeItems}/>
+                  <TaskList items={this.state.items} />
                   <div className={"btn btn-block " + (this.state.removeActive ? "btn-danger" : "btn-dark")} onClick={this.removeItems}>Remove All Tasks</div>
                 </Card.Body>
               </Card> 

@@ -13,7 +13,7 @@ class Input extends Component {
 							<InputGroup.Prepend>
 								<InputGroup.Text id="basic-addon1"> <i className="fa fa-sticky-note" /> </InputGroup.Text>
 							</InputGroup.Prepend>
-							<Form.Control size="lg" type="text" placeholder="task" value={this.props.item} onChange={this.props.handleChange} />
+							<Form.Control size="lg" type="text" placeholder="task" value={this.props.item.name} onChange={this.props.handleChange} />
 						</InputGroup>
 						
 						<Button className="btn-block" variant="primary" type="submit">Add Task</Button>
