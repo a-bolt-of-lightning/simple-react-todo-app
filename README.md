@@ -1,3 +1,12 @@
+## simple-react-todo-app
+
+a simple todo react web app made by reactjs and styled using bootstrap
+
+## link
+https://a-bolt-of-lightning.github.io/simple-react-todo-app/
+
+
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
