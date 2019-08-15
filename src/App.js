@@ -12,7 +12,6 @@ class App extends Component{
       items:["1", "2", "3"],
       item:""
     }
-
   }
 
   handleChange = (e) => {
@@ -29,7 +28,12 @@ class App extends Component{
       item:"",
       items: newItems
     })
+  }
 
+  removeItems = () => {
+    this.setState({
+      items: []
+    });
   }
 
   render(){
@@ -40,7 +44,7 @@ class App extends Component{
               <Card>
                 <Card.Body>
                   <Input item={this.state.item}  handleChange={this.handleChange} handleSubmit={this.handleSubmit}/>
-                  <TaskList items={this.state.items}/>
+                  <TaskList items={this.state.items} removeItems={this.removeItems}/>
                 </Card.Body>
               </Card> 
             </Col>
