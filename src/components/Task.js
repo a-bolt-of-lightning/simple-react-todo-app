@@ -12,7 +12,7 @@ class Task extends Component {
 						{this.props.name} 
 						<div>
 							<span> <i className="fa fa-trash" onClick={this.props.removeItem} /> </span>
-							<span> <i className="fa fa-pencil" /> </span>
+							<span> <i className="fa fa-pencil" onClick={this.props.editItem}/> </span>
 						</div>
 					</ListGroup.Item>    
       </div>

@@ -15,8 +15,7 @@ class Input extends Component {
 							</InputGroup.Prepend>
 							<Form.Control size="lg" type="text" placeholder="task" value={this.props.item.name} onChange={this.props.handleChange} />
 						</InputGroup>
-						
-						<Button className="btn-block" variant="primary" type="submit">Add Task</Button>
+						<Button className="btn-block mt-4" variant={!this.props.editItem ? "info" : "success"} type="submit">{!this.props.editItem ? "Add Task" : "Edit Task"}</Button>
 					</Form.Group>
 				</Form>
       </div>
