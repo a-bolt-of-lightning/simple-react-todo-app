@@ -9,7 +9,8 @@ class App extends Component{
     super(props);
 
     this.state={
-      items:["1", "2", "3"],
+      removeActive: false,
+      items:[],
       item:""
     }
   }
@@ -23,16 +24,25 @@ class App extends Component{
   handleSubmit = (e) => {
     
     e.preventDefault();
+    if(this.state.item === "") {
+      return;
+    }
     const newItems = [...this.state.items, this.state.item];
     this.setState({
       item:"",
       items: newItems
-    })
+    });
+
+    if(!this.state.removeActive){
+      this.setState({removeActive: true});
+    }
   }
 
   removeItems = () => {
     this.setState({
-      items: []
+      item: "",
+      items: [],
+      removeActive: false
     });
   }
 
@@ -45,6 +55,7 @@ class App extends Component{
                 <Card.Body>
                   <Input item={this.state.item}  handleChange={this.handleChange} handleSubmit={this.handleSubmit}/>
                   <TaskList items={this.state.items} removeItems={this.removeItems}/>
+                  <div className={"btn btn-block " + (this.state.removeActive ? "btn-danger" : "btn-dark")} onClick={this.removeItems}>Remove All Tasks</div>
                 </Card.Body>
               </Card> 
             </Col>
